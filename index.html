@@ -134,10 +134,19 @@
         }
         
         /* Service List Optimization */
-        .service-list li {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        /* Premium Logo Fallback Style */
+        .logo-fallback {
+            display: none;
+            align-items: center;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 900;
+            color: var(--brand-navy);
+            font-size: 1.5rem;
+            letter-spacing: -0.05em;
+            text-decoration: none;
+            border-left: 4px solid var(--brand-gold);
+            padding-left: 12px;
+            line-height: 1;
         }
     </style>
 </head>
@@ -169,8 +178,13 @@
     <header class="header" id="header">
         <div class="container">
             <a href="#" class="logo">
-                <img src="./images/logo.png" alt="(주)우리임대관리" style="height: 50px; width: auto; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div style="display:none; align-items:center; font-family: 'Noto Sans KR', sans-serif; font-weight: 900; color: #192a4a; font-size: 1.5rem; letter-spacing: -0.05em;">
+                <!-- 어떤 상황에서도 뜨는 로고 필살기 -->
+                <img src="./images/logo.png?v=1.2" 
+                     id="mainLogo"
+                     alt="(주)우리임대관리" 
+                     style="height: 50px; width: auto; object-fit: contain;" 
+                     onerror="this.onerror=null; this.src='logo.png'; this.addEventListener('error', function(){ document.getElementById('mainLogo').style.display='none'; document.getElementById('logoFallback').style.display='flex'; });">
+                <div class="logo-fallback" id="logoFallback">
                     (주)우리임대관리
                 </div>
             </a>
@@ -374,7 +388,11 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <img src="./images/logo.png" alt="(주)우리임대관리 로고" style="height: 50px; width: auto; filter: brightness(0) invert(1);">
+                        <img src="./images/logo.png?v=1.2" 
+                             alt="(주)우리임대관리" 
+                             style="height: 50px; width: auto; filter: brightness(0) invert(1);"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div style="display:none; font-family: 'Noto Sans KR', sans-serif; font-weight: 900; color: white; font-size: 1.4rem;">(주)우리임대관리</div>
                     </a>
                     <p>신뢰와 정직을 바탕으로 임대인과 임차인 모두가 만족하는 공간을 만들어갑니다.</p>
                 </div>
