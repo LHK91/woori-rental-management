@@ -35,7 +35,10 @@
             align-items: center;
             gap: 15px;
             z-index: 1000;
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             border-bottom: 2px solid #b4935e;
         }
@@ -187,9 +190,9 @@
     <header class="header" id="header">
         <div class="container">
             <a href="#" class="logo">
-                <img src="./images/logo.png" alt="(주)우리임대관리" style="height: 50px; width: auto; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div style="display:none; align-items:center; gap:0.5rem; font-weight: 900; color: #192a4a; font-size: 1.5rem;">
-                    <i class='bx bx-building-house'></i> (주)우리임대관리
+                <img src="./images/logo.png" alt="(주)우리임대관리" style="height: 45px; width: auto; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display:none; align-items:center; font-family: 'Noto Sans KR', sans-serif; font-weight: 900; color: #192a4a; font-size: 1.4rem; letter-spacing: -0.05em;">
+                    (주)우리임대관리
                 </div>
             </a>
             
@@ -550,6 +553,19 @@
             setTimeout(() => {
                 modal.style.display = 'flex';
             }, 500);
+
+            // Adjust Header position based on Banner height
+            const banner = document.querySelector('.announcement-bar');
+            const header = document.querySelector('.header');
+            if(banner && header) {
+                const bannerHeight = banner.offsetHeight;
+                header.style.top = bannerHeight + 'px';
+                // Adjust Hero section padding-top as well
+                const hero = document.querySelector('.hero');
+                if(hero) {
+                    hero.style.paddingTop = (bannerHeight + 140) + 'px';
+                }
+            }
         };
         
         function closeModal() {
