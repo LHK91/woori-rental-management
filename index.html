@@ -123,10 +123,21 @@
         .modal-header {
             background: #192a4a;
             color: white;
-            padding: 35px 20px 25px;
+            padding: 40px 25px; /* 여백 대폭 확대 */
             text-align: center;
+            min-height: 120px; /* 최소 높이 확보 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-        .modal-header h2 { color: white; margin: 0; font-size: 1.5rem; }
+        .modal-header h2 { 
+            color: white; 
+            margin: 0; 
+            font-size: 1.6rem; /* 크기 최적화 */
+            line-height: 1.4; 
+            word-break: keep-all; 
+        }
         .modal-body {
             padding: 30px;
             text-align: center;
@@ -346,7 +357,7 @@
                         <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-dark);">1. 전문 임대관리</h3>
                         <ul style="color: var(--text-muted); line-height: 1.6; padding-left: 1.25rem; list-style-type: disc; display: flex; flex-direction: column; gap: 0.5rem;">
                             <li><strong>공실 및 연체 관리</strong>를 통한 수익 안정화</li>
-                            <li>임대차 계약서 작성 대행 및 <strong>입·퇴거 정산</strong></li>
+                            <li>임대차 계약 대행 및 <strong>입·퇴거 원스톱 정산</strong></li>
                             <li>체계적인 <strong>민원 응대 및 유지보수</strong> 전담</li>
                         </ul>
                     </div>
@@ -355,16 +366,16 @@
                         <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-dark);">2. 인테리어 및 리모델링</h3>
                         <ul style="color: var(--text-muted); line-height: 1.6; padding-left: 1.25rem; list-style-type: disc; display: flex; flex-direction: column; gap: 0.5rem;">
                             <li>노후 주택 <strong>가치 상승을 위한 리모델링</strong></li>
-                            <li>도배, 장판 교체 등 <strong>부분 인테리어 시공</strong></li>
-                            <li>협력 업체를 통한 <strong>합리적인 시공 비용</strong> 제공</li>
+                            <li>도배, 장판 등 <strong>신속한 부분 인테리어 시공</strong></li>
+                            <li>협력 업체를 통한 <strong>합리적 시공 비용</strong> 제공</li>
                         </ul>
                     </div>
                     <div class="service-card" style="display: flex; flex-direction: column; height: 100%;">
                         <div class="icon-box" style="margin-bottom: 1.5rem;"><i class='bx bx-search-alt'></i></div>
                         <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-dark);">3. 공동주택 입주점검</h3>
                         <ul style="color: var(--text-muted); line-height: 1.6; padding-left: 1.25rem; list-style-type: disc; display: flex; flex-direction: column; gap: 0.5rem;">
-                            <li>신축/구축 입주 전 <strong>전문적인 하자 점검</strong></li>
-                            <li>육안으로 확인 힘든 <strong>누수/단열 정밀 검사</strong></li>
+                            <li>신축·구축 입주 전 <strong>전문가 하자 점검</strong></li>
+                            <li>육안 확인 힘든 <strong>누수·단열 정밀 검사</strong></li>
                             <li>시공사 대상 <strong>하자 보수 청구 대행</strong> 지원</li>
                         </ul>
                     </div>
@@ -372,18 +383,18 @@
                         <div class="icon-box" style="margin-bottom: 1.5rem;"><i class='bx bx-line-chart'></i></div>
                         <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-dark);">4. 부동산 자문 (컨설팅)</h3>
                         <ul style="color: var(--text-muted); line-height: 1.6; padding-left: 1.25rem; list-style-type: disc; display: flex; flex-direction: column; gap: 0.5rem;">
-                            <li>주택임대사업자 등록 등 <strong>세무/행정 자문</strong></li>
+                            <li>주택임대사업자 <strong>세무 및 행정 자문</strong></li>
                             <li>위탁관리 계약을 통한 <strong>리스크 관리</strong></li>
-                            <li>건물 가치 평가 및 <strong>매매/투자 수익률 컨설팅</strong></li>
+                            <li>건물 가치 평가 및 <strong>투자 수익률 컨설팅</strong></li>
                         </ul>
                     </div>
                     <div class="service-card" style="display: flex; flex-direction: column; height: 100%;">
                         <div class="icon-box" style="margin-bottom: 1.5rem;"><i class='bx bx-receipt'></i></div>
                         <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-dark);">5. 스마트 모바일 고지서</h3>
                         <ul style="color: var(--text-muted); line-height: 1.6; padding-left: 1.25rem; list-style-type: disc; display: flex; flex-direction: column; gap: 0.5rem;">
-                            <li>카카오톡 및 앱 기반의 <strong>모바일 고지서 자동 발송</strong></li>
-                            <li>임대료, 관리비, 공과금 등의 <strong>투명한 내역 제공</strong></li>
-                            <li>간편 결제 연동을 통한 <strong>빠른 수납 및 연체 방지</strong></li>
+                            <li>카톡 기반 <strong>모바일 고지서 자동 발송</strong></li>
+                            <li>임대료·관리비 등의 <strong>투명한 내역 제공</strong></li>
+                            <li>간편 결제 연동으로 <strong>빠른 수납 및 연체 방지</strong></li>
                         </ul>
                     </div>
                 </div>
