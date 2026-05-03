@@ -35,12 +35,10 @@
             align-items: center;
             gap: 15px;
             z-index: 1000;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            position: relative;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             border-bottom: 2px solid #b4935e;
+            z-index: 1001;
         }
         @keyframes shine-bar {
             to { background-position: 200% center; }
@@ -100,31 +98,32 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.6);
             display: none;
             justify-content: center;
             align-items: center;
-            z-index: 2000;
-            backdrop-filter: blur(5px);
+            z-index: 9999; /* 최상위 우선순위 */
+            backdrop-filter: blur(4px);
         }
         .modal-content {
             background: white;
             width: 90%;
-            max-width: 500px;
-            border-radius: 20px;
+            max-width: 450px;
+            border-radius: 24px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            animation: modal-up 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+            animation: modal-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        @keyframes modal-up {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        @keyframes modal-pop {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
         .modal-header {
-            background: var(--brand-blue, #192a4a);
+            background: #192a4a;
             color: white;
-            padding: 30px 20px;
+            padding: 35px 20px 25px;
             text-align: center;
         }
         .modal-header h2 { color: white; margin: 0; font-size: 1.5rem; }
@@ -549,22 +548,14 @@
         // Modal Control
         window.onload = function() {
             const modal = document.getElementById('noticeModal');
-            // Show modal on load
             setTimeout(() => {
                 modal.style.display = 'flex';
-            }, 500);
+            }, 600);
 
-            // Adjust Header position based on Banner height
-            const banner = document.querySelector('.announcement-bar');
+            // Revert Header top to 0 as Banner is now relative
             const header = document.querySelector('.header');
-            if(banner && header) {
-                const bannerHeight = banner.offsetHeight;
-                header.style.top = bannerHeight + 'px';
-                // Adjust Hero section padding-top as well
-                const hero = document.querySelector('.hero');
-                if(hero) {
-                    hero.style.paddingTop = (bannerHeight + 140) + 'px';
-                }
+            if(header) {
+                header.style.top = '0';
             }
         };
         
