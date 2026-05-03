@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 오피스텔 비상사태 | (주)우리임대관리</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --brand-blue: #0A4D9A; /* CI Main Color */
+            --danger-red: #E11D48; /* Urgency Accent */
+            --bg-light: #F8FAFC;
+            --text-dark: #1E293B;
+        }
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: #E2E8F0; 
+            margin: 0; 
+            padding: 20px;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        /* Header Section */
+        .hero {
+            background: var(--brand-blue);
+            color: white;
+            padding: 60px 20px;
+            position: relative;
+        }
+        .badge {
+            background: var(--danger-red);
+            color: white;
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding: 8px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(225, 29, 72, 0.4);
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin: 0 0 10px;
+            line-height: 1.2;
+            word-break: keep-all;
+        }
+        .hero h1 span {
+            color: #FCA5A5; /* Light Red */
+        }
+        .hero p {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin: 0;
+            opacity: 0.9;
+            word-break: keep-all;
+        }
+        
+        /* Alert Section */
+        .alert-box {
+            background: #FFF1F2;
+            border: 3px solid var(--danger-red);
+            margin: -30px 40px 30px;
+            padding: 30px 20px;
+            border-radius: 12px;
+            position: relative;
+            z-index: 10;
+        }
+        .alert-box h2 {
+            color: var(--danger-red);
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0 0 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .alert-box p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            color: #881337;
+        }
+
+        /* Solutions Section */
+        .features {
+            display: flex;
+            gap: 20px;
+            padding: 0 40px 40px;
+        }
+        .feature-card {
+            flex: 1;
+            padding: 30px 20px;
+            background: #F8FAFC;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--brand-blue);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--brand-blue);
+            margin-bottom: 15px;
+        }
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin: 0 0 10px;
+            color: var(--brand-blue);
+        }
+        .feature-card p {
+            margin: 0;
+            font-size: 1rem;
+            color: #475569;
+            line-height: 1.5;
+            word-break: keep-all;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 0 40px 50px;
+        }
+        .cta-btn {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            background: var(--danger-red);
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(225, 29, 72, 0.3);
+        }
+        .cta-btn:hover {
+            background: #BE123C;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(225, 29, 72, 0.4);
+        }
+        .cta-sub {
+            display: block;
+            margin-top: 15px;
+            font-size: 1rem;
+            color: #64748B;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.5rem; }
+            .features { flex-direction: column; padding: 0 20px 30px; }
+            .alert-box { margin: -20px 20px 30px; }
+            .cta-section { padding: 0 20px 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Hero -->
+        <div class="hero">
+            <div class="badge">2026 주택임대관리법 개정</div>
+            <h1>오피스텔 무등록 관리<br><span>과태료 주의보!</span></h1>
+            <p>100세대 이상 필수 확인</p>
+        </div>
+
+        <!-- Alert Box -->
+        <div class="alert-box">
+            <h2><i class='bx bxs-error'></i> 횡령·과태료 사고?</h2>
+            <p>무등록 관리, 100% 건축주 책임!</p>
+        </div>
+
+        <!-- Solutions -->
+        <div class="features">
+            <div class="feature-card">
+                <i class='bx bx-check-shield feature-icon'></i>
+                <h3>🛡️ 100% 합법 보장</h3>
+                <p>정부 공식 인허가 취득!<br>법적 리스크 원천 차단</p>
+            </div>
+            <div class="feature-card">
+                <i class='bx bx-line-chart feature-icon'></i>
+                <h3>📊 1원 단위 투명 회계</h3>
+                <p>AI 3중 검증 시스템!<br>관리비 횡령 ZERO</p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <a href="#contact" class="cta-btn">📞 과태료 방어 1:1 상담</a>
+            <span class="cta-sub">골든타임 무료 컨설팅</span>
+        </div>
+
+    </div>
+
+</body>
+</html>

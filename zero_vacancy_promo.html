@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수익 누수 방어 솔루션 | (주)우리임대관리</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #b4935e; /* Elegant gold */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+        }
+        body { 
+            font-family: 'Pretendard', 'Noto Sans KR', sans-serif; 
+            background-color: var(--bg-light); 
+            margin: 0; 
+            padding: 0;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+        .wrapper {
+            max-width: 860px;
+            margin: 60px auto;
+            background: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            overflow: hidden;
+            border-top: 4px solid var(--primary);
+        }
+        .header {
+            padding: 80px 50px 60px;
+            text-align: center;
+            background-color: var(--primary);
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--accent);
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(180,147,94,0.2) 0%, rgba(15,23,42,0) 50%);
+            animation: pulse-bg 4s infinite alternate;
+            z-index: 0;
+        }
+        @keyframes pulse-bg {
+            0% { transform: scale(0.9); opacity: 0.6; }
+            100% { transform: scale(1.1); opacity: 1; }
+        }
+        .header > * {
+            position: relative;
+            z-index: 1;
+        }
+        .subtitle {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            letter-spacing: 0.1em;
+            border: 1px solid rgba(180, 147, 94, 0.5);
+            padding: 6px 16px;
+            border-radius: 20px;
+            background: rgba(180, 147, 94, 0.1);
+        }
+        .title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin: 0 0 20px;
+            color: #ffffff;
+            line-height: 1.35;
+            letter-spacing: -0.04em;
+        }
+        .title span {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+        }
+        .desc {
+            font-size: 1.15rem;
+            color: #cbd5e0;
+            font-weight: 400;
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+        .content {
+            padding: 60px 50px;
+        }
+        .insight-box {
+            background-color: var(--bg-light);
+            border-left: 3px solid var(--accent);
+            padding: 30px;
+            margin-bottom: 50px;
+        }
+        .insight-box h3 {
+            margin: 0 0 10px;
+            font-size: 1.15rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .insight-box p {
+            margin: 0;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .solutions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .sol-card {
+            padding: 30px;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .sol-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+            border-color: #cbd5e0;
+        }
+        .sol-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        .sol-card h4 {
+            font-size: 1.1rem;
+            margin: 0 0 10px;
+            color: var(--primary);
+        }
+        .sol-card p {
+            margin: 0;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+        .cta-wrap {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 50px;
+            border-top: 1px solid #f1f5f9;
+        }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 18px 45px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.15rem;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(180, 147, 94, 0.4);
+            animation: bounce-subtle 2s infinite;
+        }
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); box-shadow: 0 8px 25px rgba(180, 147, 94, 0.5); }
+        }
+        .cta-button:hover {
+            background-color: #9c7f50;
+            transform: translateY(-2px);
+            animation-play-state: paused;
+        }
+        @media (max-width: 768px) {
+            .solutions { grid-template-columns: 1fr; }
+            .header { padding: 50px 25px 40px; }
+            .content { padding: 40px 25px; }
+            .title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <span class="subtitle">PROPERTY MANAGEMENT SOLUTION</span>
+            <h1 class="title">보이지 않는 임대 수익 누수,<br><span>이제 그만</span> 멈추십시오.</h1>
+            <p class="desc">(주)우리임대관리만의 체계적인 연체/공실 방어 시스템</p>
+        </div>
+        
+        <div class="content">
+            <div class="insight-box">
+                <h3><i class='bx bx-pie-chart-alt-2'></i> 수익률 하락의 가장 큰 원인</h3>
+                <p>건물주님, 혹시 통장에 찍히는 실제 수입이 계약서상의 금액과 다르지 않으신가요? 눈에 보이지 않는 단기 공실과 빈번한 월세 연체는 건물 가치를 떨어뜨리고 임대 수익률을 갉아먹는 가장 핵심적인 요인입니다.</p>
+            </div>
+
+            <div class="solutions">
+                <div class="sol-card">
+                    <i class='bx bx-bell sol-icon'></i>
+                    <h4>스마트 알림 및 소통</h4>
+                    <p>자체 시스템을 통한 선제적 납부 안내 및 다국어 지원 알림으로, 외국인 유학생을 포함한 모든 입주민의 미납 발생을 사전에 방지합니다.</p>
+                </div>
+                <div class="sol-card">
+                    <i class='bx bx-target-lock sol-icon'></i>
+                    <h4>공실 방어 네트워크</h4>
+                    <p>인근 대학교 제휴 및 지역 부동산 네트워크를 활용하여 타겟화된 마케팅을 전개, 공실 발생 즉시 우량 임차인으로 신속하게 채워 넣습니다.</p>
+                </div>
+            </div>
+
+            <div class="cta-wrap">
+                <a href="index.html#contact" class="cta-button">임대 관리 무료 컨설팅 받기</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
