@@ -177,16 +177,12 @@
     <!-- Header (Menu) -->
     <header class="header" id="header">
         <div class="container">
-            <a href="#" class="logo">
-                <!-- 어떤 상황에서도 뜨는 로고 필살기 -->
-                <img src="./images/logo.png?v=1.2" 
-                     id="mainLogo"
-                     alt="(주)우리임대관리" 
-                     style="height: 50px; width: auto; object-fit: contain;" 
-                     onerror="this.onerror=null; this.src='logo.png'; this.addEventListener('error', function(){ document.getElementById('mainLogo').style.display='none'; document.getElementById('logoFallback').style.display='flex'; });">
-                <div class="logo-fallback" id="logoFallback">
-                    (주)우리임대관리
-                </div>
+            <a href="#" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <!-- 고화질 벡터 로고 (이미지 파일 없이 무조건 출력) -->
+                <svg width="220" height="50" viewBox="0 0 220 50" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" y="10" width="5" height="30" fill="#b4935e" rx="2"/>
+                    <text x="15" y="36" font-family="'Noto Sans KR', sans-serif" font-weight="900" font-size="24" fill="#192a4a">(주)우리임대관리</text>
+                </svg>
             </a>
             
             <nav class="navbar" id="navbar">
@@ -387,12 +383,12 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <img src="./images/logo.png?v=1.2" 
-                             alt="(주)우리임대관리" 
-                             style="height: 50px; width: auto; filter: brightness(0) invert(1);"
-                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div style="display:none; font-family: 'Noto Sans KR', sans-serif; font-weight: 900; color: white; font-size: 1.4rem;">(주)우리임대관리</div>
+                    <a href="#" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                        <!-- 하단 고화질 벡터 로고 -->
+                        <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="8" width="4" height="24" fill="#b4935e" rx="2"/>
+                            <text x="12" y="28" font-family="'Noto Sans KR', sans-serif" font-weight="900" font-size="20" fill="#ffffff">(주)우리임대관리</text>
+                        </svg>
                     </a>
                     <p>신뢰와 정직을 바탕으로 임대인과 임차인 모두가 만족하는 공간을 만들어갑니다.</p>
                 </div>
