@@ -89,7 +89,95 @@
         @media (max-width: 768px) {
             .announcement-bar { flex-direction: column; padding: 15px; gap: 12px; font-size: 0.95rem; }
         }
+        }
+        /* Popup Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: modal-up 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes modal-up {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .modal-header {
+            background: var(--brand-blue, #192a4a);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .modal-header h2 { color: white; margin: 0; font-size: 1.5rem; }
+        .modal-body {
+            padding: 30px;
+            text-align: center;
+            color: #1e293b;
+        }
+        .modal-body p { margin-bottom: 20px; line-height: 1.6; }
+        .modal-footer {
+            display: flex;
+            border-top: 1px solid #e2e8f0;
+        }
+        .modal-btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            background: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .modal-btn.close-today { color: #64748b; font-size: 0.9rem; }
+        .modal-btn.confirm { background: #192a4a; color: white; }
+        .modal-close-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        .modal-close-icon:hover { opacity: 1; }
     </style>
+    
+    <!-- Popup Modal -->
+    <div class="modal-overlay" id="noticeModal">
+        <div class="modal-content">
+            <i class='bx bx-x modal-close-icon' onclick="closeModal()"></i>
+            <div class="modal-header">
+                <div class="announcement-badge" style="margin-bottom: 10px;">긴급 공지</div>
+                <h2>2026 주택임대관리법 개정 안내</h2>
+            </div>
+            <div class="modal-body">
+                <p>오피스텔 100세대 이상 단지 등<br><strong>전문 주택임대관리업 등록이 의무화</strong>되었습니다.</p>
+                <p style="color: #e11d48; font-weight: 800;">무등록 관리 시 과태료 발생!</p>
+                <p>(주)우리임대관리의 법적 리스크 방어<br>솔루션을 지금 바로 확인하세요.</p>
+                <a href="officetel_promo.html" class="btn btn-primary" style="width: 100%;">솔루션 상세 보기</a>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn close-today" onclick="closeModal()">그만 보기</button>
+                <button class="modal-btn confirm" onclick="closeModal()">확인</button>
+            </div>
+        </div>
+    </div>
     <div class="announcement-bar">
         <span class="announcement-badge">실시간 긴급</span>
         <span class="announcement-text">2026 오피스텔 개정법령 대응! <strong>무등록 관리 과태료 방어 솔루션</strong>을 확인하세요.</span>
@@ -99,7 +187,10 @@
     <header class="header" id="header">
         <div class="container">
             <a href="#" class="logo">
-                <img src="./images/logo.png" alt="(주)우리임대관리 로고" style="height: 50px; width: auto; object-fit: contain;">
+                <img src="./images/logo.png" alt="(주)우리임대관리" style="height: 50px; width: auto; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display:none; align-items:center; gap:0.5rem; font-weight: 900; color: #192a4a; font-size: 1.5rem;">
+                    <i class='bx bx-building-house'></i> (주)우리임대관리
+                </div>
             </a>
             
             <nav class="navbar" id="navbar">
@@ -451,5 +542,19 @@
     <!-- Scripts -->
     <script src="./scripts/main.js"></script>
     <script src="./scripts/chatbot.js"></script>
+    <script>
+        // Modal Control
+        window.onload = function() {
+            const modal = document.getElementById('noticeModal');
+            // Show modal on load
+            setTimeout(() => {
+                modal.style.display = 'flex';
+            }, 500);
+        };
+        
+        function closeModal() {
+            document.getElementById('noticeModal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
