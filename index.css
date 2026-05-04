@@ -1047,28 +1047,35 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.1rem;
 }
 
-.performance-info-box {
-    margin-top: 3rem;
-    background: var(--brand-navy, #192a4a);
-    color: white;
-    padding: 3rem 2rem;
-    border-radius: 15px;
-    text-align: center;
-    border-bottom: 8px solid var(--brand-gold, #b4935e);
-    box-shadow: var(--shadow-lg);
+/* 운영실적 하단 강조 박스 - 네이비 배경 + 흰색/골드 글자 */
+section.performance .performance-info-box {
+    margin-top: 3rem !important;
+    background-color: #192a4a !important; /* 고정 네이비색 */
+    padding: 3.5rem 2rem !important;
+    border-radius: 15px !important;
+    text-align: center !important;
+    border-bottom: 8px solid #b4935e !important; /* 고정 골드색 */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+    display: block !important;
 }
 
-.performance-info-box h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.2rem;
-    color: white !important; /* 글자색을 명시적으로 흰색으로 고정 */
-    font-weight: 800;
+section.performance .performance-info-box h3 {
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem !important;
+    color: #ffffff !important; /* 무조건 흰색 */
+    font-weight: 900 !important;
+    line-height: 1.4 !important;
 }
 
-.performance-info-box p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    margin-bottom: 0;
-    line-height: 1.7;
-    color: white;
+section.performance .performance-info-box p {
+    font-size: 1.2rem !important;
+    color: #e2e8f0 !important; /* 연한 회색/흰색 계열 */
+    opacity: 1 !important;
+    line-height: 1.8 !important;
+    margin: 0 !important;
+}
+
+section.performance .performance-info-box .highlight-gold {
+    color: #fcd34d !important; /* 강조 골드색 */
+    font-weight: 700 !important;
 }
