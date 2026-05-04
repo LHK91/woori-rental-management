@@ -341,62 +341,15 @@
                     <p class="section-desc">풍부한 경험과 전문성을 바탕으로 증명된 (주)우리임대관리의 성공 사례입니다.</p>
                 </div>
                 
-                <div class="performance-grid">
-                    <!-- This grid can be easily updated by the admin -->
-                    <div class="performance-card">
-                        <div class="perf-tag">운영중</div>
-                        <div class="perf-content">
-                            <h3>사상구 괘법동 A 오피스텔</h3>
-                            <p>120세대 통합 위탁 관리</p>
-                            <div class="perf-stats">
-                                <span><i class='bx bx-trending-down'></i> 공실률 2% 미만 유지</span>
-                                <span><i class='bx bx-check-double'></i> 연체율 0% 달성</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="performance-card">
-                        <div class="perf-tag">운영중</div>
-                        <div class="perf-content">
-                            <h3>연제구 연산동 B 빌라</h3>
-                            <p>24세대 전속 임대 관리</p>
-                            <div class="perf-stats">
-                                <span><i class='bx bx-refresh'></i> 노후 시설 전면 리모델링</span>
-                                <span><i class='bx bx-up-arrow-alt'></i> 수익률 15% 상승</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="performance-card">
-                        <div class="perf-tag">최신 실적</div>
-                        <div class="perf-content">
-                            <h3>부산진구 양정동 C 다가구</h3>
-                            <p>12세대 원스톱 관리 도입</p>
-                            <div class="perf-stats">
-                                <span><i class='bx bx-time-five'></i> 도입 1개월 내 만실 달성</span>
-                                <span><i class='bx bx-user-voice'></i> 민원 처리 만족도 100%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="performance-card">
-                        <div class="perf-tag">최신 실적</div>
-                        <div class="perf-content">
-                            <h3>동아대학교 인근 D 원룸텔</h3>
-                            <p>40세대 대규모 위탁 운영</p>
-                            <div class="perf-stats">
-                                <span><i class='bx bx-shield-quarter'></i> 무등록 관리 리스크 해결</span>
-                                <span><i class='bx bx-mobile-alt'></i> 모바일 고지서 시스템 구축</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="performance-grid" id="performanceGrid">
+                    <!-- 운영 실적 데이터는 scripts/performance.js에서 관리자가 수정할 수 있습니다. -->
                 </div>
 
-                <div class="performance-info-box" style="margin-top: 3rem; background: var(--brand-navy); color: white; padding: 2.5rem; border-radius: 15px; text-align: center; border-bottom: 5px solid var(--brand-gold);">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">"단 1세대라도 소중하게 관리합니다"</h3>
-                    <p style="opacity: 0.9; margin-bottom: 0; line-height: 1.6;">
+                <div class="performance-info-box">
+                    <h3>"단 1세대라도 소중하게 관리합니다"</h3>
+                    <p>
                         대규모 오피스텔부터 소규모 다가구 주택까지, <br>
-                        (주)우리임대관리는 차별화된 데이터와 노하우로 임대인의 자산 가치를 극대화합니다.
+                        (주)우리임대관리는 <span class="highlight-gold">차별화된 데이터와 노하우</span>로 임대인의 자산 가치를 극대화합니다.
                     </p>
                 </div>
             </div>
@@ -508,6 +461,7 @@
     </footer>
  
     <script src="./scripts/main.js"></script>
+    <script src="./scripts/performance.js"></script>
     <script src="./scripts/chatbot.js"></script>
     <script>
         function closeModal() { document.getElementById('noticeModal').style.display = 'none'; }
